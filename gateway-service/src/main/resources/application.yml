@@ -1,0 +1,12 @@
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: customerModule
+          uri: http://localhost:3008
+          predicates:
+            - Path=/customer/**
+        - id: pollModule
+          uri: http://localhost:3009
+          predicates:
+            - Path=/poll/**
